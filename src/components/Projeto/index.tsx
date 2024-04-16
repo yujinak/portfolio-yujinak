@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Projetos, Projeto, ProjetosContainer, Buttons } from './styles'
-import { workerData } from 'worker_threads'
 import Loader from '../Loader'
 
 type Props = {
@@ -20,6 +19,10 @@ const ProjetoBox = ({ id }: Props) => {
         setEstaCarregando(false)
       })
   }, [])
+
+  const printScreen = (repositorio: Repository) => {
+    fetch(repositorio.homepage).then((res) => res)
+  }
 
   const whichLanguage = (repositorio: Repository) => {
     const { language } = repositorio

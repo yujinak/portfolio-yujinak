@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const Hero = styled.div`
-  margin: 32px 24px;
   padding: 32px;
   display: flex;
   align-items: center;
