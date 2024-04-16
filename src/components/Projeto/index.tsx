@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react'
 import { Projetos, Projeto, ProjetosContainer, Buttons } from './styles'
 import { workerData } from 'worker_threads'
+import Loader from '../Loader'
 
-const ProjetoBox = () => {
+type Props = {
+  id?: string
+}
+
+const ProjetoBox = ({ id }: Props) => {
   const [repos, setRepos] = useState<Repository[]>([])
   const [estaCarregando, setEstaCarregando] = useState(true)
 
@@ -11,7 +16,6 @@ const ProjetoBox = () => {
     fetch(`https://api.github.com/users/yujinak/repos`)
       .then((res) => res.json())
       .then((resJson) => {
-        console.log(resJson)
         setRepos(resJson)
         setEstaCarregando(false)
       })
@@ -33,6 +37,8 @@ const ProjetoBox = () => {
       return <i className="devicon-python-plain-wordmark colored"></i>
     if (language === 'SCSS')
       return <i className="devicon-sass-original colored"></i>
+    if (language === 'Vue')
+      return <i className="devicon-vuejs-plain-wordmark"></i>
   }
 
   const fixName = (repositorio: Repository) => {
@@ -41,7 +47,6 @@ const ProjetoBox = () => {
     name.includes('-')
       ? (newName = name.split('-'))
       : (newName = name.split('_'))
-    console.log(newName)
 
     return newName.map(
       (word: string) => word.slice(0, 1).toUpperCase() + word.slice(1) + ' '
@@ -57,9 +62,9 @@ const ProjetoBox = () => {
         (https://api.github.com/).
       </p>
       {estaCarregando ? (
-        <h2>Carregando...</h2>
+        <Loader />
       ) : (
-        <Projetos className="container">
+        <Projetos>
           {repos.map((repositorio) => (
             <Projeto key={repositorio.id}>
               <h3>
@@ -68,13 +73,18 @@ const ProjetoBox = () => {
 
               <p>{repositorio.description}</p>
               <Buttons>
-                <a
-                  href={repositorio.homepage}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver deploy
-                </a>
+                {repositorio.homepage ? (
+                  <a
+                    href={repositorio.homepage}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ver deploy
+                  </a>
+                ) : (
+                  ''
+                )}
+
                 <a
                   href={repositorio.html_url}
                   target="_blank"

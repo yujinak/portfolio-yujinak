@@ -1,23 +1,37 @@
 // import { UseSelector } from "react-redux"
+import { HashLink } from 'react-router-hash-link'
+
 import { Header as Cabecalho } from './styles'
 
-const Header = () => {
+type Props = {
+  id?: string
+}
+
+const Header = ({ id }: Props) => {
   return (
     <Cabecalho>
       <nav>
         <ul>
           <li>
-            <a href="#hero">home</a>
+            <HashLink to="/#hero" title="Clique aqui para saber mais sobre mim">
+              sobre
+            </HashLink>
           </li>
           <li>
-            <a href="#projects">projetos</a>
+            <HashLink to="/#projects" title="Clique aqui para ver os projetos">
+              projetos
+            </HashLink>
           </li>
           <li>
-            <a href="contact">contato</a>
+            <HashLink to="/#footer" title="Clique aqui para entrar em contato">
+              contato
+            </HashLink>
           </li>
         </ul>
       </nav>
-      <h1>Gabriel Yuji Nakashima - Portfólio</h1>
+      <h1>
+        <HashLink to="/#menu">Gabriel Yuji Nakashima - Portfólio</HashLink>
+      </h1>
       <ul>
         <li>
           <a href="g.yujinak@gmail.com">

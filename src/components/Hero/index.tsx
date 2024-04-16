@@ -1,6 +1,10 @@
 import { Hero } from './styles'
 
-const HeroComponent = () => {
+type Props = {
+  id?: string
+}
+
+const HeroComponent = ({ id }: Props) => {
   return (
     <Hero className="container">
       <img src="https://github.com/yujinak.png" alt="" />

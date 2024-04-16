@@ -4,8 +4,8 @@ import { colors } from '../../styles'
 export const ProjetosContainer = styled.div`
   background-color: ${colors.gray};
   padding: 42px 24px;
-  margin: 0 64px;
   border-radius: 12px;
+  margin-bottom: 68px;
 `
 
 export const Projetos = styled.div`

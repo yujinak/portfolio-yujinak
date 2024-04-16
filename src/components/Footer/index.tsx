@@ -1,6 +1,10 @@
 import { Menu, FooterBox, Direitos } from './styles'
 
-const Footer = () => {
+type Props = {
+  id?: string
+}
+
+const Footer = ({ id }: Props) => {
   return (
     <FooterBox className="container">
       <Menu>
