@@ -7,34 +7,53 @@ type Props = {
   id?: string
 }
 
+const copyToClipboard = () => {
+  navigator.clipboard.writeText('g.yujinak@gmail.com')
+  alert('Email g.yujinak@gmail.com copiado!')
+}
+
 const Header = ({ id }: Props) => {
   return (
-    <Cabecalho>
+    <Cabecalho id="menu">
       <nav>
         <ul>
           <li>
-            <HashLink to="/#hero" title="Clique aqui para saber mais sobre mim">
+            <HashLink
+              smooth
+              to="#hero"
+              title="Clique aqui para saber mais sobre mim"
+            >
               sobre
             </HashLink>
           </li>
           <li>
-            <HashLink to="/#projects" title="Clique aqui para ver os projetos">
+            <HashLink
+              smooth
+              to="#projects"
+              title="Clique aqui para ver os projetos"
+            >
               projetos
             </HashLink>
           </li>
           <li>
-            <HashLink to="/#footer" title="Clique aqui para entrar em contato">
+            <HashLink
+              smooth
+              to="#footer"
+              title="Clique aqui para entrar em contato"
+            >
               contato
             </HashLink>
           </li>
         </ul>
       </nav>
       <h1>
-        <HashLink to="/#menu">Gabriel Yuji Nakashima - Portfólio</HashLink>
+        <HashLink smooth to="#menu">
+          Gabriel Yuji Nakashima - Portfólio
+        </HashLink>
       </h1>
       <ul>
         <li>
-          <a href="g.yujinak@gmail.com">
+          <a onClick={copyToClipboard}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"

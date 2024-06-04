@@ -1,21 +1,24 @@
 import { Menu, FooterBox, Direitos } from './styles'
 
+import { HashLink } from 'react-router-hash-link'
+
 type Props = {
   id?: string
 }
 
 const Footer = ({ id }: Props) => {
   return (
-    <FooterBox className="container">
+    <FooterBox id="footer">
       <Menu>
         <li>
-          <a href="#hero">home</a>
+          <HashLink smooth to="#hero">
+            home
+          </HashLink>
         </li>
         <li>
-          <a href="#projects">projetos</a>
-        </li>
-        <li>
-          <a href="#contact">contato</a>
+          <HashLink smooth to="#projects">
+            projetos
+          </HashLink>
         </li>
       </Menu>
       <Direitos>

@@ -6,7 +6,7 @@ type Props = {
 
 const HeroComponent = ({ id }: Props) => {
   return (
-    <Hero className="container">
+    <Hero className="container" id="hero">
       <img src="https://github.com/yujinak.png" alt="" />
       <p>
         Desenvolvedor motivado pela criatividade e autoconhecimento, com um

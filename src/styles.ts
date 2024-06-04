@@ -3,7 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 export const colors = {
   gray: 'rgb(200, 200, 200, 30%);',
   black: '#000',
-  white: '#fff'
+  white: '#fff',
+  blue: '#D1E1F1'
 }
 
 export const GlobalCSS = createGlobalStyle`
@@ -20,6 +21,7 @@ export const GlobalCSS = createGlobalStyle`
     text-decoration: none;
     color: ${colors.black};
     transition: 0.5s;
+    cursor: pointer;
 
 
     &:hover {

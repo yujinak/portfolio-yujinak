@@ -2,9 +2,12 @@ import styled from 'styled-components'
 import { colors } from '../../styles'
 
 export const Header = styled.header`
+  background-color: ${colors.white};
   display: flex;
   justify-content: space-between;
-  padding: 24px 20px 0;
+  padding: 24px 20px 24px;
+  position: sticky;
+  top: 0;
 
   ul {
     display: flex;
@@ -31,5 +34,6 @@ export const Header = styled.header`
 
   h1 {
     font-size: 24px;
+    text-align: center;
   }
 `

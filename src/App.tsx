@@ -17,11 +17,11 @@ function App() {
     <>
       <BrowserRouter>
         <GlobalCSS />
-        <Header id="menu" />
+        <Header />
         <Rotas />
-        <HeroComponent id="hero" />
-        <ProjetoBox id="projects" />
-        <Footer id="footer" />
+        <HeroComponent />
+        <ProjetoBox />
+        <Footer />
       </BrowserRouter>
     </>
   )

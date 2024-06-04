@@ -57,7 +57,7 @@ const ProjetoBox = ({ id }: Props) => {
   }
 
   return (
-    <ProjetosContainer className="container">
+    <ProjetosContainer className="container" id="projects">
       <h2>Projetos</h2>
       <p>
         Aqui estão listados meus projetos. Os dados de cada projeto abaixo são

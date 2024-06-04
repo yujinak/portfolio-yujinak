@@ -4,15 +4,14 @@ import { colors } from '../../styles'
 export const FooterBox = styled.div`
   padding: 32px;
   margin-top: 42px;
-  border-radius: 12px;
 
-  background-color: ${colors.gray};
+  background-color: ${colors.blue};
 `
 
 export const Menu = styled.ul`
-  margin: 60px 0;
   display: flex;
-  text-align: center;
+  margin: 60px auto;
+  justify-content: center;
 
   li {
     margin: 32px 12px;

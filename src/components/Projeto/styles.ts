@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors } from '../../styles'
 
 export const ProjetosContainer = styled.div`
-  background-color: ${colors.gray};
+  background-color: ${colors.blue};
   padding: 42px 24px;
   border-radius: 12px;
   margin-bottom: 68px;
